@@ -135,7 +135,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
  */
 
 .header-desktop{
-  background:#0da8e4;
+  background:rgba(19,31,64);
   -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
   -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
   box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
@@ -540,7 +540,7 @@ input.au-input.au-input-xl{
   margin-bottom:60px
 }
 .price{
-  margin:15px 0 0;
+  /*margin:15px 0 0;*/
   font-weight:800;
   color:#0da8e4
 }
@@ -1039,4 +1039,9 @@ footer ul li{
     border:0;
     padding:8px 0
   }
+}
+
+.album-image {
+  object-fit: fill;
+  height: 270px;
 }

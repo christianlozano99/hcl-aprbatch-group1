@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Event} from "@angular/router";
+import {Event, Router} from "@angular/router";
 import {Luv2ShopFormService} from "../../services/luv2-shop-form.service";
 import {Country} from "../../common/country";
 import {State} from "../../common/state";
 import {Luv2ShopValidators} from "../../validators/luv2-shop-validators";
+import {CartService} from "../../services/cart.service";
+import {CheckoutService} from "../../services/checkout.service";
+import {Order} from "../../common/order";
+import {OrderItem} from "../../common/order-item";
+import {Purchase} from "../../common/purchase";
 
 @Component({
   selector: 'app-checkout',
@@ -24,9 +29,14 @@ export class CheckoutComponent implements OnInit {
   billingAddressStates:State[] = [];
   checkoutFormGroup:FormGroup;
   constructor(private formBuilder: FormBuilder,
-              private luv2ShopFormService:Luv2ShopFormService) { }
+              private luv2ShopFormService:Luv2ShopFormService,
+              private cartService: CartService,
+              private checkoutService: CheckoutService,
+              private router:Router) { }
 
   ngOnInit(): void {
+    this.reviewCartDetails();
+
     this.checkoutFormGroup = this.formBuilder.group({
       customer:this.formBuilder.group({
         firstName: new FormControl('', [Validators.required, Validators.minLength(2), Luv2ShopValidators.notOnlyWhitespace]),
@@ -57,6 +67,8 @@ export class CheckoutComponent implements OnInit {
         expirationMonth: [''],
         expirationYear: [''],
       }),
+
+
     })
 
     // populate credit card months
@@ -97,6 +109,62 @@ export class CheckoutComponent implements OnInit {
     if (this.checkoutFormGroup.invalid) {
       this.checkoutFormGroup.markAllAsTouched()
     }
+    // set up order
+    let order = new Order();
+    order.totalPrice = this.totalPrice;
+    order.totalQuantity = this.totalQuantity;
+
+
+    // get card items
+    const cartItems = this.cartService.cartItems;
+
+    // create orderItems from cartItems
+    // - long way
+    // let orderItems: OrderItem[] = []
+    // for (let i = 0; i < cartItems.length; i++) {
+    //   orderItems[i] = new OrderItem((cartItems[i]))
+    // }
+    // short way of doing th same thing
+    let orderItem: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
+
+    // populate purchase - customer
+    let purchase = new Purchase()
+    purchase.customer = this.checkoutFormGroup.controls['customer'].value;
+
+
+    // populate purchase - shipping address
+    purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress'].value;
+    const shippingState: State = JSON.parse(JSON.stringify(purchase.shippingAddress.state))
+    const shippingCountry: Country = JSON.parse(JSON.stringify(purchase.shippingAddress.country));
+    purchase.shippingAddress.state=shippingState.name;
+    purchase.shippingAddress.country=shippingState.name;
+
+    // populate purchase - billing address
+    purchase.billingAddress = this.checkoutFormGroup.controls['billingAddress'].value;
+    const billingState: State = JSON.parse(JSON.stringify(purchase.billingAddress.state))
+    const billingCountry: Country = JSON.parse(JSON.stringify(purchase.billingAddress.country));
+    purchase.billingAddress.state=billingState.name;
+    purchase.billingAddress.country=billingCountry.name;
+
+    // populate purchase - order and orderItems
+    purchase.order = order;
+    purchase.orderItems = orderItem;
+
+    // call REST API via the CheckoutService
+    this.checkoutService.placeOrder(purchase).subscribe(
+      {
+        // success
+        next: (response: { orderTrackingNumber: any; }) => {
+          alert(`Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`)
+          // reset cart
+          this.resetCart();
+        },
+        // fail
+        error: (err: { message: any; }) => {
+          alert(`There was an error: ${err.message}`)
+        }
+      }
+    )
   }
 
   get firstName() {return this.checkoutFormGroup.get('customer.firstName')}
@@ -181,5 +249,27 @@ export class CheckoutComponent implements OnInit {
         formGroup?.get('state')?.setValue(data[0]);
       }
     )
+  }
+
+  reviewCartDetails() {
+    this.cartService.totalQuantity.subscribe(
+      totalQuantity => this.totalQuantity=totalQuantity
+    )
+    this.cartService.totalPrice.subscribe(
+      totalPrice => this.totalPrice=totalPrice
+    )
+  }
+
+  resetCart() {
+    // reset cart data
+    this.cartService.cartItems=[];
+    this.cartService.totalPrice.next(0);
+    this.cartService.totalQuantity.next(0);
+
+    // reset the form
+    this.checkoutFormGroup.reset();
+
+    // navigate back to the products page
+    this.router.navigateByUrl("/products");
   }
 }
