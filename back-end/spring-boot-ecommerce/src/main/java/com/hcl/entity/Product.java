@@ -1,16 +1,20 @@
 package com.hcl.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.Year;
 import java.util.Date;
 
 @Entity
-@Data
-@Table(name = "product")
+@Getter
+@Setter
+@Table(name = "album")
 public class Product {
 
     @Id
@@ -18,8 +22,8 @@ public class Product {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private ProductCategory category;
+    @JoinColumn(name = "genre_id", nullable = false)
+    private ProductCategory genre;
 
     @Column(name = "sku")
     private String sku;
@@ -27,8 +31,21 @@ public class Product {
     @Column(name = "name")
     private String name;
 
+
+    @Column(name = "artist_name")
+    private String artistName;
+
     @Column(name = "description")
     private String description;
+
+    @Column(name = "tracks")
+    private int tracks;
+
+    @Convert(
+            converter = YearAttributeConverter.class
+    )
+    @Column(name = "year_published")
+    private Year yearPublished;
 
     @Column(name = "unit_price")
     private BigDecimal unitPrice;

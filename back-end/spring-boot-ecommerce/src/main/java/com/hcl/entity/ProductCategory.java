@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "product_category")
+@Table(name = "album_genre")
 @Getter
 @Setter
 public class ProductCategory {
@@ -16,9 +16,9 @@ public class ProductCategory {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "category_name")
-    private String categoryName;
+    @Column(name = "genre")
+    private String genre;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "genre")
     private Set<Product> products;
 }
