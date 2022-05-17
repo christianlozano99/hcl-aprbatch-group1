@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div *ngFor="let tempProduct of products" class="col-md-4 mb-3">
-          <div class="card" style="width: 18rem;">
+          <div *ngIf="tempProduct.unitsInStock!=0" class="card" style="width: 18rem;">
             <a routerLink="/products/{{tempProduct.id}}">
               <img class="album-image card-img-top" src="{{tempProduct.imageUrl}}" alt="Card image cap">
             </a>
@@ -19,6 +19,27 @@
             <div class="card-body">
               <span  class="price card-link"> {{tempProduct.unitPrice | currency:'USD'}}</span>
                 <button href="#" class="card-link btn btn-primary btn-sm" (click)="addToCart(tempProduct)">
+                  Add to cart
+                </button>
+            </div>
+          </div>
+
+          <div *ngIf="tempProduct.unitsInStock<1" class="card" style="width: 18rem;">
+            <a routerLink="/products/{{tempProduct.id}}">
+              <img class="album-image card-img-top" src="{{tempProduct.imageUrl}}" alt="Card image cap">
+            </a>
+            <div class="card-body">
+              <a style="text-decoration: none" routerLink="/products/{{tempProduct.id}}">
+                <h5 class="card-title">{{tempProduct.name}}</h5>
+              </a>
+              <p class="card-text"><strong>By: </strong>{{tempProduct.artistName}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Out of Stock!</li>
+            </ul>
+            <div class="card-body">
+              <span  class="price card-link"> {{tempProduct.unitPrice | currency:'USD'}}</span>
+                <button disabled href="#" class="card-link btn btn-primary btn-sm" (click)="addToCart(tempProduct)">
                   Add to cart
                 </button>
             </div>

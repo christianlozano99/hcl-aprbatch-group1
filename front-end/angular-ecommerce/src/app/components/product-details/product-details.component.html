@@ -6,7 +6,8 @@
     <p>Track Number: {{product.tracks}}</p>
     <p>Year Published: {{product.yearPublished}}</p>
     <div class="price">{{product.unitPrice | currency:'USD'}}</div>
-    <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+    <div *ngIf="product.unitsInStock > 0"><button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button></div>
+    <div *ngIf="product.unitsInStock <= 0"><button disabled (click)="addToCart()" class="btn btn-primary btn-sm">Out of Stock</button></div>
     <hr>
     <h4>Description</h4>
     <p>{{product.description}}</p>
