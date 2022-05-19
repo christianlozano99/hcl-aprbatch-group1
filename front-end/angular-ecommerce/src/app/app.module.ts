@@ -27,6 +27,7 @@ import {
 
 import myAppConfig from './config/my-app-config';
 import { MembersPageComponent } from './components/members-page/members-page.component';
+import {ProductCategory} from "./common/product-category";
 
 const oktaConfig = Object.assign({
   onAuthRequired: (kataAuth, injector) => {
@@ -48,10 +49,13 @@ const routes: Routes = [
   {path: 'products/:id', component: ProductDetailsComponent},
   {path: 'search/:keyword', component: ProductListComponent},
   {path: 'category/:id', component: ProductListComponent},
-  {path: 'category', component: ProductListComponent},
+  // {path: 'category
+  // ', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
-  {path: '', redirectTo: '/products', pathMatch: 'full'},
-  {path: '**', redirectTo: '/products', pathMatch: 'full'}
+  {path: 'products', component: ProductListComponent},
+  {path: 'category', component: ProductCategoryMenuComponent},
+  {path: '', redirectTo: '/category', pathMatch: 'full'},
+  {path: '**', redirectTo: '/category', pathMatch: 'full'}
 ];
 
 @NgModule({
