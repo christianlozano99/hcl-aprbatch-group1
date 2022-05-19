@@ -1,6 +1,3 @@
-
-    <div class="content">
-
       <div class="dashhead">
         <div class="dashhead-titles">
           <h6 class="dashhead-subtitle">Item Page</h6>
@@ -42,7 +39,7 @@
                 </a>
               </div>
 
-              <!-- item descripnt  -->
+              <!-- item description  -->
               <h1 class="text-shadow mb-3 text-primary">{{product.name}}</h1>
               <h6 class=""><strong>Artist Name:</strong> {{product.artistName}}</h6>
               <h6 class=""><strong>Published Year:</strong> {{product.yearPublished}}</h6>
@@ -51,20 +48,9 @@
               <span class="badge-warning badge badge-pill font-weight-bolder mb-1">{{product.unitsInStock}} in Stock</span>
               <h3 class="mt-4 font-weight-bold text-info">Description</h3>
               <p class="font-weight-light">{{product.description}}</p>
-              <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+              <button *ngIf="product.unitsInStock!=0" (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+              <button *ngIf="product.unitsInStock<1" disabled (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
             </div>
           </div>
         </div>
 
-
-<!--    <img src="{{product.imageUrl}}" class="detail-img" style="margin-top: 50px"/>-->
-<!--    <h3>{{product.name}}</h3>-->
-<!--    <h5>Artist Name: {{product.artistName}}</h5>-->
-<!--    <p>Track Number: {{product.tracks}}</p>-->
-<!--    <p>Year Published: {{product.yearPublished}}</p>-->
-<!--    <div class="price">{{product.unitPrice | currency:'USD'}}</div>-->
-<!--    <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>-->
-<!--    <hr>-->
-<!--    <h4>Description</h4>-->
-<!--    <p>{{product.description}}</p>-->
-  </div>

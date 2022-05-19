@@ -1,5 +1,4 @@
-
-  <div class="dashhead">
+<div class="dashhead">
     <div class="dashhead-titles">
       <h6 class="dashhead-subtitle">Albums</h6>
       <h3 class="dashhead-title" style="color: #ffb71b;">Category</h3>
@@ -37,7 +36,7 @@
             <div class="row">
               <!--        loop over the collection of products-->
               <div  *ngFor="let tempProduct of products"  class=" col-xl-md-3 mb-5 mb-sm-0">
-                <div  class="card-flyer">
+                <div class="card-flyer">
                   <div class="text-box">
                     <div class="image-box">
                       <a routerLink="/products/{{tempProduct.id}}">
@@ -52,19 +51,26 @@
                       <!--                <ul class="list-group list-group-flush">-->
                       <!--                  <li class="list-group-item">Currently <strong>{{tempProduct.unitsInStock}}</strong> in Stock</li>-->
                       <!--                </ul>-->
-                      <div class="card-body">
+                      <div *ngIf="tempProduct.unitsInStock!=0" class="card-body">
                         <span  class="price card-link"> {{tempProduct.unitPrice | currency:'USD'}}</span>
-                        <button href="#" class="card-link btn btn-primary btn-sm" (click)="addToCart(tempProduct)">
+                        <button   href="#" class="card-link btn btn-primary btn-sm" (click)="addToCart(tempProduct)">
                           Add to cart
                         </button>
                         <p><strong>{{tempProduct.unitsInStock}}</strong> in Stock</p>
-
-
                       </div>
 
+                      <div *ngIf="tempProduct.unitsInStock<1" class="card-body">
+                        <span  class="price card-link"> {{tempProduct.unitPrice | currency:'USD'}}</span>
+                        <button disabled  href="#" class="card-link btn btn-primary btn-sm" (click)="addToCart(tempProduct)">
+                          Add to cart
+                        </button>
+                        <p class="text-danger"><strong>{{tempProduct.unitsInStock}}</strong> in Stock</p>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+
               </div>
               <!--        if products empty then display a message-->
               <div *ngIf="products?.length==0" class="alert alert-warning col-md-12" role="alert">
@@ -72,32 +78,6 @@
               </div>
           </div>
         </div>
-
-      <!-- pagination  -->
-      <div class="text d-flex justify-content-center mt-5">
-        <ul class="pagination">
-          <ngb-pagination [(page)]="thePageNumber"
-                          [pageSize]="thePageSize"
-                          [collectionSize]="theTotalElements"
-                          [maxSize]="5"
-                          [boundaryLinks]="true"
-                          (pageChange)="listProducts()">
-
-          </ngb-pagination>
-          <div class="ml-2">
-            <span class="mr-2">Page Size</span>
-
-            <select (change)="updatePageSize($any($event.target).value)">
-              <option>2</option>
-              <option selected="true">5</option>
-              <option>10</option>
-              <option>20</option>
-              <option>50</option>
-            </select>
-          </div>
-        </ul>
-      </div>
-
     </div>
 
 
@@ -106,7 +86,7 @@
     <div role="tabpanel" class="tab-pane mb-3" id="thumb">
 
       <div *ngFor="let tempProduct of products" class="row">
-        <div  class="col-lg-12 mb-md-3">
+        <div *ngIf="tempProduct.unitsInStock!=0" class="col-lg-12 mb-md-3">
           <div class="w-lg m-x-auto">
             <a routerLink="/products/{{tempProduct.id}}" class="ex-graph float-left m-2 mr-4">
               <img class="frame" src="{{tempProduct.imageUrl}}">
@@ -116,45 +96,65 @@
             <h2 style="color: #ffb71b; font-size: 19px !important;">{{tempProduct.name}}</h2>
             <p class="text-muted"><strong>By: </strong>{{tempProduct.artistName}}</p>
             <span><small class="badge badge-danger badge-pill">{{tempProduct.unitPrice|currency:'USD'}}</small></span>
+            <span><small class="ml-2 badge badge-info badge-pill">{{tempProduct.unitsInStock}} in Stock</small></span>
             <p class=" mt-3 description" data-toggle="tooltip" data-placement="bottom"
                title="">
               {{tempProduct.description}}
             </p>
+            <button (click)="addToCart(tempProduct)" class="btn-sm btn-primary">Add to Cart</button>
+            <a href="#" routerLink="/products/{{tempProduct.id}}" class="badge badge-primary">View More</a>
+          </div>
+        </div>
+<!--Display when it's out of stock-->
+        <div  *ngIf="tempProduct.unitsInStock<1" class="col-lg-12 mb-md-3">
+          <div class="w-lg m-x-auto">
+            <a routerLink="/products/{{tempProduct.id}}" class="ex-graph float-left m-2 mr-4">
+              <img class="frame" src="{{tempProduct.imageUrl}}">
+            </a>
+          </div>
+          <div class="mt-3">
+            <h2 style="color: #ffb71b; font-size: 19px !important;">{{tempProduct.name}}</h2>
+            <p class="text-muted"><strong>By: </strong>{{tempProduct.artistName}}</p>
+            <span><small class="badge badge-danger badge-pill">{{tempProduct.unitPrice|currency:'USD'}}</small></span>
+            <span><small class="ml-2 badge badge-danger badge-pill">{{tempProduct.unitsInStock}} in Stock</small></span>
+            <p class=" mt-3 description" data-toggle="tooltip" data-placement="bottom"
+               title="">
+              {{tempProduct.description}}
+            </p>
+            <button disabled (click)="addToCart(tempProduct)" class="btn-sm btn-primary">Add to Cart</button>
             <a href="#" routerLink="/products/{{tempProduct.id}}" class="badge badge-primary">View More</a>
           </div>
 
         </div>
         <div class="col-sm-12 mb-md-4 hr-divider"></div>
 
-
-
       </div>
 
-      <!-- pagination  -->
-      <div class="text d-flex justify-content-center mt-5">
-        <ul class="pagination">
-          <ngb-pagination [(page)]="thePageNumber"
-                          [pageSize]="thePageSize"
-                          [collectionSize]="theTotalElements"
-                          [maxSize]="5"
-                          [boundaryLinks]="true"
-                          (pageChange)="listProducts()">
+    </div>
 
-          </ngb-pagination>
-          <div class="ml-2">
-            <span class="mr-2">Page Size</span>
+    <!-- pagination  -->
+    <div class="text d-flex justify-content-center mt-5">
+      <ul class="pagination">
+        <ngb-pagination [(page)]="thePageNumber"
+                        [pageSize]="thePageSize"
+                        [collectionSize]="theTotalElements"
+                        [maxSize]="5"
+                        [boundaryLinks]="true"
+                        (pageChange)="listProducts()">
 
-            <select (change)="updatePageSize($any($event.target).value)">
-              <option>2</option>
-              <option selected="true">5</option>
-              <option>10</option>
-              <option>20</option>
-              <option>50</option>
-            </select>
-          </div>
-        </ul>
-      </div>
+        </ngb-pagination>
+        <div class="ml-2">
+          <span class="mr-2">Page Size</span>
 
+          <select (change)="updatePageSize($any($event.target).value)">
+            <option>2</option>
+            <option selected="true">5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+        </div>
+      </ul>
     </div>
   </div>
 

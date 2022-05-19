@@ -5,46 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa293b7b-2af4-4712-93e6-3cb3d968779a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/1f72d18d14ce928e3e8ecbcfd4c9ad423bf6a201b5cb4ebfdd55518cf0467059.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/5b6047c2e6f966f6ea2183c7101064d4b8b47a4fee480e9e60b89f697fc6534c.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/9579817abe2752140d631af269075c6ff9014974f836068b0972c9930a741e49.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/a474a96a16968ce019a0297f6ec2b8e7fe80196a192db324862b9a8db4a91dd8.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/application.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/.Rhistory" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/application.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/tablesorter.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/tether.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/js/toolkit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/angular-ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/angular-ecommerce.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/cart-details/cart-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/cart-details/cart-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/cart-status/cart-status.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/cart-status/cart-status.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/checkout/checkout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/login-status/login-status.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/login-status/login-status.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/product-list/product-list-grid.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-list/product-list-grid.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/product-list/product-list-table.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/product-list/product-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/search/search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/search/search.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/genres/rock/rock-1006.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/genres/rock/rock-1006.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,6 +141,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
