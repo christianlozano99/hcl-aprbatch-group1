@@ -4,37 +4,114 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa293b7b-2af4-4712-93e6-3cb3d968779a" name="Changes" comment="" />
+    <list default="true" id="fa293b7b-2af4-4712-93e6-3cb3d968779a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/1f72d18d14ce928e3e8ecbcfd4c9ad423bf6a201b5cb4ebfdd55518cf0467059.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/5b6047c2e6f966f6ea2183c7101064d4b8b47a4fee480e9e60b89f697fc6534c.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/9579817abe2752140d631af269075c6ff9014974f836068b0972c9930a741e49.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cli-ngcc/a474a96a16968ce019a0297f6ec2b8e7fe80196a192db324862b9a8db4a91dd8.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/.Rhistory" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/tablesorter.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/tether.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/js/toolkit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/angular-ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/angular-ecommerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/cart-details/cart-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/cart-details/cart-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/cart-status/cart-status.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/cart-status/cart-status.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/checkout/checkout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/login-status/login-status.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/login-status/login-status.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-category-menu/product-category-menu.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-details/product-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/product-list/product-list-grid.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/product-list/product-list-grid.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/product-list/product-list-table.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/product-list/product-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/search/search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/search/search.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/genres/rock/rock-1006.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/genres/rock/rock-1006.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1652974437" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="Vincent" />
+                    <option name="lastUsedInstant" value="1652974436" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/../.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="296z9VG7tnhmcbukcAvAQpL4yB3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/shiyangxiao/Group 1 - Cary Region Project/front-end/angular-ecommerce/src/app/services&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/shiyangxiao/hcl-apr-group-1/front-end/angular-ecommerce&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/shiyangxiao/Group 1 - Cary Region Project/front-end/angular-ecommerce/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/shiyangxiao/hcl-apr-group-1/front-end/angular-ecommerce/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -44,6 +121,7 @@
       <recent name="$PROJECT_DIR$/src/app/common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/assets/images" />
       <recent name="$PROJECT_DIR$/src/assets/images/genres/pop" />
     </key>
@@ -87,6 +165,14 @@
       <workItem from="1652716369759" duration="2063000" />
       <workItem from="1652720236206" duration="557000" />
       <workItem from="1652721437484" duration="41000" />
+      <workItem from="1652739023769" duration="10655000" />
+      <workItem from="1652784054254" duration="4983000" />
+      <workItem from="1652810570758" duration="2206000" />
+      <workItem from="1652835502377" duration="6203000" />
+      <workItem from="1652878016267" duration="15110000" />
+      <workItem from="1652902081669" duration="67000" />
+      <workItem from="1652923387419" duration="14369000" />
+      <workItem from="1652964252380" duration="1418000" />
     </task>
     <servers />
   </component>
