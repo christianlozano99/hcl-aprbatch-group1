@@ -1,10 +1,8 @@
 package com.hcl.config;
 
-import com.hcl.entity.Country;
-import com.hcl.entity.Product;
-import com.hcl.entity.ProductCategory;
-import com.hcl.entity.State;
+import com.hcl.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -20,6 +18,9 @@ import java.util.Set;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
+    @Value("${allowed.origins}")
+    private String[] theAllowedOrigins;
+
     private EntityManager entityManager;
     @Autowired
     public MyDataRestConfig(EntityManager theEntityManager) {
@@ -28,15 +29,19 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-        RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
-        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
+        //RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
+        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
         // disable HTTP methods for Classes: PUT, POST AND DELETE
         disableHTTPMethods(Product.class, config, theUnsupportedActions);
         disableHTTPMethods(ProductCategory.class, config, theUnsupportedActions);
         disableHTTPMethods(Country.class, config, theUnsupportedActions);
         disableHTTPMethods(State.class, config, theUnsupportedActions);
+        disableHTTPMethods(Order.class, config, theUnsupportedActions);
+
         // call an internal  helper method
         exposedIds(config);
+
+        cors.addMapping(config.getBasePath() + "/**").allowedOrigins(theAllowedOrigins);
     }
 
     private void disableHTTPMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {

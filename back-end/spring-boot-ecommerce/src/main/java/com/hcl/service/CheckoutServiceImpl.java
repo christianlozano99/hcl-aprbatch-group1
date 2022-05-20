@@ -35,7 +35,7 @@ public class CheckoutServiceImpl implements CheckoutService {
     @Override
     @Transactional
     public PurchaseResponse placeOrder(Purchase purchase) {
-        // ALbums to be logged for change
+        // Albums to be logged for change
         StringBuilder albums = new StringBuilder();
         // retrieve the order info from dto
         Order order = purchase.getOrder();
@@ -54,6 +54,18 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // populate customer with order
         Customer customer = purchase.getCustomer();
+
+
+        //check if this is an existing customer
+        String theEmail = customer.getEmail();
+
+        Customer customerFromDB = customerRepository.findByEmail(theEmail);
+
+        if(customerFromDB != null) {
+            // found them now assign it accordingly
+            customer = customerFromDB;
+        }
+
         customer.add(order);
 
         // save to the database
