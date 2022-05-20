@@ -49,7 +49,13 @@ export class CartService {
     }
     if (alreadyExistsInCart) {
       // increment the quantity
-      existingCartItem.quantity++;
+      if((existingCartItem.unitsLeft - existingCartItem.quantity) == 0) {
+        alert("Unfortunatly there are only " + existingCartItem.unitsLeft + " albums left for "
+                + existingCartItem.name);
+      } else {
+        existingCartItem.quantity++;
+      }
+
     } else {
       // just add the item to the array
       this.cartItems.push(theCartItem);
