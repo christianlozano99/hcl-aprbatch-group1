@@ -1,0 +1,9 @@
+<li class="nav-item">
+  <a routerLink="/cart-details" class="nav-link gold" style="color: rgb(207, 210, 218);text-decoration: none"><i
+    class="fa fa-shopping-cart mr-2"></i><span>Shopping Cart</span>
+    <div class="total">
+      {{totalPrice|currency:'USD'}}
+      <span>{{totalQuantity}}</span>
+    </div>
+  </a>
+</li>

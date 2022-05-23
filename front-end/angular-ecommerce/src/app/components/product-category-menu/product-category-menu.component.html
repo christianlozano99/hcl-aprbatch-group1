@@ -1,0 +1,76 @@
+  <div class="dashhead">
+    <div class="dashhead-titles">
+      <h6 class="dashhead-subtitle">Home Page</h6>
+      <h2 class="dashhead-title gradient" style="">Pure Sound</h2>
+    </div>
+  </div>
+  <div class="hr-divider mt-3">
+    <h3 class="hr-divider-content hr-divider-heading">Genres</h3>
+    <br>
+  </div>
+<!-- tables for different categories  -->
+<div role="tabpanel" class="tab-pane" id="list">
+  <div class="row">
+<!--    <div class="col-lg-6 mx-auto my-auto ">-->
+<!--      <div class="single category hvr-grow-shadow">-->
+<!--        <h3 class="side-title">Textbook</h3>-->
+<!--        <ul class="list-unstyled">-->
+<!--          <li><a href="item-info.html" data-toggle="tooltip" data-placement="bottom"-->
+<!--                 title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quia praesentium veniam corrupti vitae iure earum nulla accusantium asperiores itaque, deleniti et animi porro maxime magni consequatur minima perspiciatis quos. Voluptatem necessitatibus architecto expedita, quidem reprehenderit officiis suscipit distinctio voluptatibus reiciendis ratione voluptates corporis est, sequi velit iste, at a!">Lorem-->
+<!--            fugit asperiores hic ut, unde illo nisi architecto id sequi, totam quam delectus. Fuga quia nobis-->
+<!--            sint ratione consequatur porro, quam laudantium cupiditate. Distinctio? <span-->
+<!--              class="pull-right text-danger"></span></a>-->
+<!--          </li>-->
+<!--          <li><a href="" data-toggle="tooltip" data-placement="bottom"-->
+<!--                 title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quia praesentium veniam corrupti vitae iure earum nulla accusantium asperiores itaque, deleniti et animi porro maxime magni consequatur minima perspiciatis quos. Voluptatem necessitatibus architecto expedita, quidem reprehenderit officiis suscipit distinctio voluptatibus reiciendis ratione voluptates corporis est, sequi velit iste, at a!">Technology-->
+<!--            <span class="pull-right text-danger"></span></a></li>-->
+<!--          <li><a href="" title="">Web <span class="pull-right text-danger"></span></a></li>-->
+<!--          <li><a href="" title="">Ecommerce <span class="pull-right text-danger"></span></a></li>-->
+<!--          <a class="btn btn-sm btn-outline-primary hvr-glow" href="icon-nav/index.html" title="">View all-->
+<!--            textbooks</a>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div  *ngFor="let temProductCategory of productCategories" class="col-lg-6 mx-auto my-auto ">
+      <div class="single hvr-grow-shadow">
+        <h3 class="side-title">
+          <a style="text-decoration: none; color: #0f1013" routerLink="/category/{{temProductCategory.id}}" routerLinkActive="active-link">
+            {{temProductCategory.genre}}
+          </a>
+        </h3>
+        <ul *ngIf="temProductCategory.id == 1" class="list-unstyled">
+          <li *ngFor="let tempProduct of product_1.slice(0,5)">
+            <a routerLink="/products/{{tempProduct.id}}"  href="" title="">{{tempProduct.name}}<span class="pull-right text-danger"></span></a>
+          </li>
+          <a class="btn btn-sm btn-outline-primary hvr-glow" routerLink="/category/{{temProductCategory.id}}" >View all {{temProductCategory.genre.toLowerCase()}}
+          </a>
+        </ul>
+
+        <ul *ngIf="temProductCategory.id == 2" class="list-unstyled">
+          <li  *ngFor="let tempProduct of product_2.slice(0,5)">
+            <a routerLink="/products/{{tempProduct.id}}" href="" title="">{{tempProduct.name}}<span class="pull-right text-danger"></span></a>
+          </li>
+          <a class="btn btn-sm btn-outline-primary hvr-glow" routerLink="/category/{{temProductCategory.id}}" >View all {{temProductCategory.genre.toLowerCase()}}
+          </a>
+        </ul>
+
+        <ul *ngIf="temProductCategory.id == 3" class="list-unstyled">
+          <li  *ngFor="let tempProduct of product_3.slice(0,5)">
+            <a routerLink="/products/{{tempProduct.id}}" href="" title="">{{tempProduct.name}}<span class="pull-right text-danger"></span></a>
+          </li>
+          <a class="btn btn-sm btn-outline-primary hvr-glow" routerLink="/category/{{temProductCategory.id}}" >View all {{temProductCategory.genre.toLowerCase()}}
+          </a>
+        </ul>
+
+        <ul *ngIf="temProductCategory.id == 4" class="list-unstyled">
+          <li  *ngFor="let tempProduct of product_4.slice(0,5)">
+            <a routerLink="/products/{{tempProduct.id}}" href="" title="">{{tempProduct.name}}<span class="pull-right text-danger"></span></a>
+          </li>
+          <a class="btn btn-sm btn-outline-primary hvr-glow" routerLink="/category/{{temProductCategory.id}}" >View all {{temProductCategory.genre.toLowerCase()}}
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

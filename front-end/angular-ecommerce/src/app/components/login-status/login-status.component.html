@@ -1,0 +1,30 @@
+<li *ngIf="!isAuthenticated" class="nav-item mb-3">
+  <a data-toggle="modal"
+      data-target="#login-modal" class="nav-link gold" href="main-menu.html"
+     style="color: inherit;"><i
+    class="fa fa-sign-in mr-2" aria-hidden="true"></i>
+    User Log in
+  </a>
+</li>
+<li *ngIf="isAuthenticated && userFullName" class="dropdown nav-item mb-3">
+  <a href="#" style=" color: rgb(207, 210, 218)" class="nav-link gold dropdown-toggle" data-toggle="dropdown">
+    <i class="fa fa-user mr-2" aria-hidden="true"></i>Hey! {{ userFullName }}!
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="#" class="dropdown-item"><i class="fa fa-address-card"></i> Profile</a></li>
+    <li><a routerLink="/order-history" href="#" class="dropdown-item"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a></li>
+    <li><a routerLink="/members" class="dropdown-item"><i class="fa-solid fa-pager"></i> Member Page</a></li>
+    <li class="divider dropdown-divider"></li>
+    <li><a (click)="logout()" class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i>
+      Logout</a></li>
+  </ul>
+</li>
+
+<div   id="login-modal" class="modal fade" role="dialog" tabindex="-1"
+     style=" background-color: rgba(0,0,0,.2); ">
+  <div class="modal-dialog" role="document">
+      <app-login></app-login>
+  </div>
+</div>
+

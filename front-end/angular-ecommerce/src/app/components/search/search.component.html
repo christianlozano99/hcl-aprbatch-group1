@@ -1,0 +1,17 @@
+<li class="nav-item ">
+  <a class="nav-link gold" href="" style="color: inherit;" data-toggle="modal"
+     data-target="#deleteAccount"><i class="fa fa-search mr-1" aria-hidden="true"></i>
+    Search Item</a>
+</li>
+
+<li class="nav-item mb-3">
+  <input #myInput
+         (keyup.enter)="doSearch(myInput.value)"
+
+         class="nav-link" type="text" name="search" style="border-bottom: 1px solid #F2B946; color: rgb(207, 210, 218)"
+         placeholder="Search for data ..."/>
+
+<!--  <button class="nav-link" (click)="doSearch(myInput.value)">-->
+<!--    Search-->
+<!--  </button>-->
+</li>

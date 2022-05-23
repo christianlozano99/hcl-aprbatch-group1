@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 sidebar" >
+      <!-- nav bar -->
+      <nav class="sidebar-nav navbar-expand-xl">
+        <div class="sidebar-header">
+          <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse"
+                  data-target="#nav-toggleable-md">
+            <span class="sr-only">Toggle nav</span>
+          </button>
+          <a class="sidebar-brand img-responsive ml-2" routerLink="/">
+            <span class="icon sidebar-brand-icon"><img src="assets/images/logo.png" alt=""></span>
+          </a>
+        </div>
+
+        <div class="collapse nav-toggleable-md mt-5" id="nav-toggleable-md" >
+
+          <ul  class="nav nav-pills nav-stacked flex-column">
+
+            <!-- User Panel -->
+            <li class="nav-header ">User Account</li>
+            <app-login-status></app-login-status>
+            <!--<li class=" dropdown ">-->
+<!--              <a href="#" class="btn btn-default navbar-btn navbar-btn-avatar ml-2 dropdown-toggle user-action gold"-->
+<!--                 data-toggle="dropdown">-->
+<!--                <img class="rounded-circle mr-2" src="https://via.placeholder.com/200">-->
+<!--                s_xiao <b class="caret"></b>-->
+<!--              </a>-->
+<!--              <ul class="dropdown-menu">-->
+<!--                <li><a href="#" class="dropdown-item"><i class="fa fa-user-o"></i>Profile</a></li>-->
+<!--                <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i>Settings</a></li>-->
+<!--                <li class="divider dropdown-divider"></li>-->
+<!--                <li><a href="#" class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i>-->
+<!--                  Logout</a></li>-->
+<!--              </ul>-->
+<!--            </li>-->
+
+
+
+            <!-- main_panel -->
+
+            <li class="nav-header">Dashboard</li>
+            <li class="nav-item">
+              <a class="nav-link gold" routerLink="/category"><i
+                class="fa fa-home mr-2"></i><span>Main Menu</span></a>
+            </li>
+            <app-search></app-search>
+            <app-cart-status></app-cart-status>
+            <!-- User info  -->
+            <!-- <li class="nav-item">
+              <hr class="visible-xs mt-3">
+            </li> -->
+
+            <li class="nav-header ">Useful Link</li>
+            <li class="nav-item">
+
+              <a class="nav-link gold " href="user-manual/index.html">
+                <i class="fa fa-question-circle mr-1" aria-hidden="true"></i>
+                User Manual
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link gold " href="report.html">
+                <i class="fa fa-info-circle mr-2" aria-hidden="true"></i>Swagger API
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link gold "
+                 href="https://docs.google.com/forms/d/e/1FAIpQLSfyt67JI-tlYN2fj_eWzASmIDZaJ4FQO4-LCIpEBG3oL35wDA/viewform?usp=sf_link"
+                 target="_blank" rel="noopener noreferrer"><i class="fa fa-comment   mr-1" aria-hidden="true"></i>
+                Feedback?</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link gold " href="icon-nav/index.html">
+                Thumbnail View
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link gold " href="item-info.html" target="blank">
+                Item Info Page
+              </a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link gold " href="Editlisting.html" target="blank">
+                Post Item
+              </a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link gold " href="order-history/item-editing.html" target="blank">
+                Edit Item
+              </a>
+            </li> -->
+
+          </ul>
+
+        </div>
+
+      </nav>
+    </div>
+
+
+    <div class="col-md-9 content">
+
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>
+<!--<footer>-->
+<!--  <ul>-->
+<!--    <li><a href="#">About Us</a></li>-->
+<!--    <li><a href="#">Contact Us</a></li>-->
+<!--    <li><a href="#">Help</a></li>-->
+<!--  </ul>-->
+<!--</footer>-->

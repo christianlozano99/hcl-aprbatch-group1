@@ -1,0 +1,56 @@
+      <div class="dashhead">
+        <div class="dashhead-titles">
+          <h6 class="dashhead-subtitle">Item Page</h6>
+          <h2 class="dashhead-title" style="color: #ffb71b;">Item Information
+          </h2>
+        </div>
+      </div>
+
+    <div class="hr-divider mt-3">
+      <h3 class="hr-divider-content hr-divider-heading"></h3>
+    </div>
+      <a routerLink="/products">Back to Product List</a>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-md-4 mb-4">
+            <img class="img_row"
+                 src="{{product.imageUrl}}" alt="">
+          </div>
+
+
+          <!--Grid column-->
+          <div class="col-md-8 mb-4">
+
+            <!--Content-->
+            <div class="p-1">
+
+              <div class="mb-3">
+                <a routerLink="/category">
+                  <span class="mr-1 badge-info badge">{{product.imageUrl.split('/')[3]}}</span>
+                </a>
+                <a routerLink="/category">
+                  <span class="badge-success badge mr-1">New</span>
+                </a>
+                <a routerLink="/category">
+                  <span class="badge-primary badge mr-1">Deal</span>
+                </a>
+              </div>
+
+              <!-- item description  -->
+              <h1 class="text-shadow mb-3 text-primary">{{product.name}}</h1>
+              <h6 class=""><strong>Artist Name:</strong> {{product.artistName}}</h6>
+              <h6 class=""><strong>Published Year:</strong> {{product.yearPublished}}</h6>
+              <h6 class=""><strong>Track Number:</strong> {{product.tracks}}</h6>
+              <span class="badge-danger badge badge-pill font-weight-bolder mb-1 mr-1">{{product.unitPrice| currency:'USD'}}</span>
+              <span class="badge-warning badge badge-pill font-weight-bolder mb-1">{{product.unitsInStock}} in Stock</span>
+              <h3 class="mt-4 font-weight-bold text-info">Description</h3>
+              <p class="font-weight-light">{{product.description}}</p>
+              <button *ngIf="product.unitsInStock!=0" (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+              <button *ngIf="product.unitsInStock<1" disabled (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+            </div>
+          </div>
+        </div>
+

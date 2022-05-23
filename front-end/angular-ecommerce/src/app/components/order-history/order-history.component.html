@@ -1,0 +1,43 @@
+<div class="dashhead">
+  <div class="dashhead-titles">
+    <h6 class="dashhead-subtitle">User</h6>
+    <h3 class="dashhead-title" style="color: #ffb71b;">Order History</h3>
+  </div>
+</div>
+<hr class="mb-4">
+
+<h3>Your Orders</h3>
+      <div *ngIf="orderHistoryList.length > 0" style="background-color: rgb(207, 210, 218)">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+
+          <tr>
+            <th width="20%">Order Tracking Number</th>
+            <th width="10%">Total Price</th>
+            <th width="10%">Total Quantity</th>
+            <th width="10%">Date</th>
+          </tr>
+          </thead>
+
+          <tr *ngFor="let tempOrderHistory of orderHistoryList">
+            <td>
+              {{ tempOrderHistory.orderTrackingNumber }}
+            </td>
+            <td>
+              {{ tempOrderHistory.totalPrice | currency: 'USD' }}
+            </td>
+            <td>
+              {{ tempOrderHistory.totalQuantity }}
+            </td>
+            <td>
+              {{ tempOrderHistory.dateCreated | date: 'medium' }}
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- if order history is empty then display a message -->
+      <div *ngIf="orderHistoryList.length == 0" class="alert alert-warning col-md-12" role="alert">
+        No orders found.
+      </div>
+
