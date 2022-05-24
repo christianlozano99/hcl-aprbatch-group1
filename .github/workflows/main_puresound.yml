@@ -7,11 +7,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'back-end/spring-boot-ecommerce/**'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
+  
 
     steps:
       - uses: actions/checkout@v2
@@ -22,13 +25,15 @@ jobs:
           java-version: '8'
 
       - name: Build with Maven
-        run: mvn clean install
+        run: |
+          cd back-end/spring-boot-ecommerce/
+          mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: '${{ github.workspace }}/back-end/spring-boot-ecommerce/target/*.war'
 
   deploy:
     runs-on: windows-latest
